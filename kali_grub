@@ -7,7 +7,7 @@ sudo mount --bind /proc /mnt/proc &&
 sudo mount --bind /sys /mnt/sys
 
 sudo chroot /mnt
-grub-install
+grub-install /dev/sda
 update-grub
 grub-install /dev/sda
 grub-install --recheck /dev/sda
@@ -16,6 +16,6 @@ exit &&
 sudo unmount /mnt/sys &&
 sudo unmount /mnt/proc &&
 sudo unmount /mnt/dev/pts &&
-sudo unmount /mnt/dev
+sudo unmount /mnt/dev &&
 sudo unmount /mnt
 exit
